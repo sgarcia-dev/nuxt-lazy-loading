@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">nuxt-lazy-loading</h1>
+      <h1 class="title">My Lazy Loading Nuxt App</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"

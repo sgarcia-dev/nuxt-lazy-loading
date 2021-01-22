@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
       <h1 class="title">This is a 10mb page</h1>
     </div>
   </div>

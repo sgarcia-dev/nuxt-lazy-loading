@@ -1,6 +1,7 @@
 <template>
   <div>
     <NuxtLink to="/" no-prefetch>Go to Home</NuxtLink>
+    <NuxtLink to="/normal-page" no-prefetch>Go to Normal Page</NuxtLink>
     <NuxtLink to="/heavy-page" no-prefetch>Go to Heavy Page</NuxtLink>
     <NuxtLink to="/heavier-page" no-prefetch>Go to Heavier Page</NuxtLink>
     <Nuxt />

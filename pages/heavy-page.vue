@@ -2,20 +2,18 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">This is a heavy page</h1>
-      <pre>{{ JSON.stringify(jsonData[0], null, 2) }}</pre>
-      <b-button>Bulma Button</b-button>
+      <h1 class="title">This is a 1mb page</h1>
     </div>
   </div>
 </template>
 
 <script>
-import jsonData from '~/data.json'
+import jsonData from '~/data/1mb.json'
 
 export default {
-  data: () => ({
-    jsonData,
-  }),
+  created() {
+    this.json = jsonData
+  },
 }
 </script>
 

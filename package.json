@@ -8,10 +8,10 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js",
-    "deploy": "git push origin master && git push heroku master"
+    "lint": "yarn lint:js"
   },
   "dependencies": {
+    "buefy": "^0.9.4",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12"
   },

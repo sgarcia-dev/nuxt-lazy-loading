@@ -3,12 +3,20 @@
     <div>
       <Logo />
       <h1 class="title">This is a heavy page</h1>
+      <pre>{{ JSON.stringify(jsonData[0], null, 2) }}</pre>
+      <b-button>Bulma Button</b-button>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import jsonData from '~/data.json'
+
+export default {
+  data: () => ({
+    jsonData,
+  }),
+}
 </script>
 
 <style>

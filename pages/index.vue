@@ -3,6 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">My Lazy Loading Nuxt App</h1>
+      <NuxtLink to="/heavy-page">Go to Heavy Page</NuxtLink>
       <div class="links">
         <a
           href="https://nuxtjs.org/"

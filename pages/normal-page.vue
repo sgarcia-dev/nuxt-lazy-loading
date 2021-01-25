@@ -1,24 +1,38 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title" @click="showHeavyComponent = !showHeavyComponent">
+      <h1 @click="showHeavyComponent = !showHeavyComponent">
         This is a normal page that loads a heavy component. Click me to render a
         heavy component.
       </h1>
-      <HeavyComponent v-if="showHeavyComponent" />
+      <h2 @click="showClonedHeavyComponent = !showClonedHeavyComponent">
+        Or click me to render a heavy component with a loading state
+      </h2>
+      <AsyncHeavyComponent v-if="showHeavyComponent" />
+      <AsyncHeavierComponent v-if="showClonedHeavyComponent" />
     </div>
   </div>
 </template>
 
 <script>
-const HeavyComponent = () =>
+import Loading from '~/components/Loading'
+import Error from '~/components/Error'
+const AsyncHeavyComponent = () =>
   import(/* webpackPrefetch: true */ '~/components/HeavyComponent')
+const AsyncHeavierComponent = () => ({
+  component: import('~/components/HeavierComponent.vue'),
+  loading: Loading,
+  error: Error,
+  delay: 200,
+  timeout: 3000,
+})
 
 export default {
-  components: { HeavyComponent },
+  components: { AsyncHeavyComponent, AsyncHeavierComponent },
   data() {
     return {
       showHeavyComponent: false,
+      showClonedHeavyComponent: false,
     }
   },
 }

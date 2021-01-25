@@ -3,18 +3,12 @@ import Error from '~/components/Error'
 
 export { AsyncComponent }
 
-function AsyncComponent(path) {
+function AsyncComponent(component) {
   return () => ({
-    // The component to load (should be a Promise)
-    component: () => import(path),
-    // A component to use while the async component is loading
+    component,
     loading: Loading,
-    // A component to use if the load fails
     error: Error,
-    // Delay before showing the loading component. Default: 200ms.
     delay: 200,
-    // The error component will be displayed if a timeout is
-    // provided and exceeded. Default: Infinity.
     timeout: 3000,
   })
 }

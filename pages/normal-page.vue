@@ -15,11 +15,8 @@
 </template>
 
 <script>
-import { AsyncComponent } from '~/utils/async'
 // import Loading from '~/components/Loading'
 // import Error from '~/components/Error'
-const AsyncHeavyComponent = () =>
-  import(/* webpackPrefetch: true */ '~/components/HeavyComponent')
 // const AsyncHeavierComponent = () => ({
 //   component: import('~/components/HeavierComponent.vue'),
 //   loading: Loading,
@@ -27,9 +24,13 @@ const AsyncHeavyComponent = () =>
 //   delay: 200,
 //   timeout: 3000,
 // })
-const AsyncHeavierComponent = AsyncComponent(
-  import('~/components/HeavierComponent')
-)
+import { asyncComponentProps } from '~/utils/async'
+const AsyncHeavierComponent = () => ({
+  ...asyncComponentProps,
+  component: import('~/components/HeavierComponent'),
+})
+const AsyncHeavyComponent = () =>
+  import(/* webpackPrefetch: true */ '~/components/HeavyComponent')
 
 export default {
   components: { AsyncHeavyComponent, AsyncHeavierComponent },

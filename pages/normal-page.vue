@@ -11,8 +11,7 @@
 </template>
 
 <script>
-const HeavyComponent = () =>
-  import(/* webpackPrefetch: true */ '~/components/HeavyComponent')
+const HeavyComponent = () => import('~/components/HeavyComponent')
 
 export default {
   components: { HeavyComponent },

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HeavyComponent from '~/components/HeavyComponent'
+const HeavyComponent = () => import('~/components/HeavyComponent')
 
 export default {
   components: { HeavyComponent },

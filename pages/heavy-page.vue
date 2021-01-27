@@ -1,18 +1,22 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">This is a 1mb page</h1>
+      <button @click="showHeavyComponent = !showHeavyComponent">
+        Click me to load heavy component!
+      </button>
     </div>
+    <HeavyComponent v-if="showHeavyComponent" />
   </div>
 </template>
 
 <script>
-import jsonData from '~/data/1mb.json'
+import HeavyComponent from '~/components/HeavyComponent'
 
 export default {
-  created() {
-    this.json = jsonData
-  },
+  components: { HeavyComponent },
+  data: () => ({
+    showHeavyComponent: false,
+  }),
 }
 </script>
 
@@ -24,15 +28,5 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
 }
 </style>

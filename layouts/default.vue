@@ -1,9 +1,12 @@
 <template>
   <div>
-    <NuxtLink to="/" no-prefetch>Go to Home</NuxtLink>
-    <NuxtLink to="/normal-page" no-prefetch>Go to Normal Page</NuxtLink>
-    <NuxtLink to="/heavy-page" no-prefetch>Go to Heavy Page</NuxtLink>
-    <NuxtLink to="/heavier-page" no-prefetch>Go to Heavier Page</NuxtLink>
+    <NuxtLink to="/" no-prefetch>Home</NuxtLink>
+    -
+    <NuxtLink to="/heavy-page" no-prefetch>Heavy Page</NuxtLink>
+    -
+    <NuxtLink to="/optimization-one" no-prefetch>Optimization #1</NuxtLink>
+    -
+    <NuxtLink to="/optimization-two" no-prefetch>Optimization #2</NuxtLink>
     <Nuxt />
   </div>
 </template>

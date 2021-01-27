@@ -1,16 +1,23 @@
 <template>
   <div class="container">
     <div>
-      <button @click="showHeavyComponent = !showHeavyComponent">
-        Click me to load heavy component!
-      </button>
+      <b-button @click="showHeavyComponent = !showHeavyComponent">
+        Click me to show heavy component
+      </b-button>
+      <br />
+      <i>Component is prefetched with the page</i>
+      <br />
     </div>
     <AsyncHeavyComponent v-if="showHeavyComponent" />
   </div>
 </template>
 
 <script>
-const AsyncHeavyComponent = () => import('~/components/HeavyComponent')
+const AsyncHeavyComponent = () =>
+  import(
+    /* webpackPrefetch: true */
+    '~/components/HeavyComponent'
+  )
 
 export default {
   components: { AsyncHeavyComponent },

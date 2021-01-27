@@ -1,9 +1,12 @@
 <template>
   <div class="container">
     <div>
-      <button @click="showHeavyComponent = !showHeavyComponent">
+      <b-button @click="showHeavyComponent = !showHeavyComponent">
         Click me to load heavy component!
-      </button>
+      </b-button>
+      <br />
+      <i>Component is loaded on demand with loading indicator</i>
+      <br />
     </div>
     <AsyncHeavyComponent v-if="showHeavyComponent" />
   </div>

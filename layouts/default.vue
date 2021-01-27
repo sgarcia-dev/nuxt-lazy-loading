@@ -7,6 +7,8 @@
     <NuxtLink to="/optimization-one" no-prefetch>Optimization #1</NuxtLink>
     -
     <NuxtLink to="/optimization-two" no-prefetch>Optimization #2</NuxtLink>
+    -
+    <NuxtLink to="/optimization-three" no-prefetch>Optimization #3</NuxtLink>
     <Nuxt />
   </div>
 </template>

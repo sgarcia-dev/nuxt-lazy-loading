@@ -5,22 +5,26 @@
         Click me to load heavy component!
       </button>
     </div>
-    <HeavyComponent v-if="showHeavyComponent" />
+    <AsyncHeavyComponent v-if="showHeavyComponent" />
   </div>
 </template>
 
 <script>
-import HeavyComponent from '~/components/HeavyComponent'
-import e from '~/data/1mb-e.json'
+import Loading from '~/components/Loading'
+import Error from '~/components/Error'
+const AsyncHeavyComponent = () => ({
+  component: import('~/components/HeavyComponent.vue'),
+  loading: Loading,
+  error: Error,
+  delay: 200,
+  timeout: 3000,
+})
 
 export default {
-  components: { HeavyComponent },
+  components: { AsyncHeavyComponent },
   data: () => ({
     showHeavyComponent: false,
   }),
-  created() {
-    this.json = { e }
-  },
 }
 </script>
 

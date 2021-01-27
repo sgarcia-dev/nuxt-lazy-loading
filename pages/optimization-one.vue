@@ -10,7 +10,8 @@
 </template>
 
 <script>
-const AsyncHeavyComponent = () => import('~/components/HeavyComponent')
+const AsyncHeavyComponent = () =>
+  import(/* webpackPrefetch: true */ '~/components/HeavyComponent')
 
 export default {
   components: { AsyncHeavyComponent },

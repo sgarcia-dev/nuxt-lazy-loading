@@ -10,15 +10,7 @@
 </template>
 
 <script>
-import Loading from '~/components/Loading'
-import Error from '~/components/Error'
-const AsyncHeavyComponent = () => ({
-  component: import('~/components/HeavyComponent.vue'),
-  loading: Loading,
-  error: Error,
-  delay: 200,
-  timeout: 3000,
-})
+const AsyncHeavyComponent = () => import('~/components/HeavyComponent')
 
 export default {
   components: { AsyncHeavyComponent },

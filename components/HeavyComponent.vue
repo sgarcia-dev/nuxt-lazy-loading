@@ -12,7 +12,13 @@ import c from '~/data/1mb-c.json'
 import d from '~/data/1mb-d.json'
 import e from '~/data/1mb-e.json'
 
-export default {}
+export default {
+  created() {
+    this.json = {
+      a, b, c, d, e
+    }
+  },
+}
 </script>
 
 <style></style>

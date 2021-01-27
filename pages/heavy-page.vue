@@ -11,9 +11,13 @@
 
 <script>
 import HeavyComponent from '~/components/HeavyComponent'
+import e from '~/data/1mb-e.json'
 
 export default {
   components: { HeavyComponent },
+  created() {
+    this.json = { e }
+  },
   data: () => ({
     showHeavyComponent: false,
   }),
